@@ -204,7 +204,7 @@ function everySecondTimerAction(){
 }
 function startTimer() {
     timeLimitInMinutes = parseInt(timeLimitInMinutes.value);
-    timeLimitInSeconds = timeLimitInMinutes * 5;
+    timeLimitInSeconds = timeLimitInMinutes * 60;
     timerInterval = setInterval(everySecondTimerAction, 1000);
 }
 
