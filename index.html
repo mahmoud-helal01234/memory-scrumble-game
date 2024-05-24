@@ -4,22 +4,28 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" 
           content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="style.css"> 
-    <title>Memory Scramble Game</title> 
+    <title>Memory Card Game</title> 
 </head> 
 
-<body>
-    
-    <h1>Adding 'a'</h1>
+    <body>
+        <div id="startGame">
+          Time left = <span id="timer">00:00</span>  
+          <label for="nrows">Number of Rows:</label>
+            <input type="number" id="nrows" min="1" value="2">
+            <label for="ncols">Number of Columns:</label>
+            <input type="number" id="ncols" min="1" value="2">
+            <label for="ncols">Time in minutes:</label>
+            <input type="number" id="selectedTime" min="1" value="1" placeholder="time in minutes">
 
-    a: <input type="number" name="a" id="a" value="1"><br>  
-    <button onclick="startTimer(document.getElementById('a').value)">run</button>
+            <button onclick="startGame()">Start Game</button>
+            
+        </div>
 
-
-    <div>Time left = <span id="timer">01:00</span></div>
-    <br> 
+        <table id="gameBoard" style="width: 100%; border: 2px solid black;">
+          
+        </table>
    
-    <script src="script.js"></script> 
-
-</body>
+                
+    </body>
+    <script src="script.js"></script>
 </html>
