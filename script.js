@@ -38,6 +38,7 @@ function startGame() {
 
     createBoardImages(numberOfRows,numberOfCols);
 
+    startTimer();
 }
 
 function validateRowsAndCols(numberOfRows,numberOfCols){
@@ -165,5 +166,45 @@ function shuffle(array) {
 }
 
 function resetGame(){
-    gameBoard.innerHTML = "";
+    
+    location.reload();
 }
+
+var timeLimitInMinutes = document.getElementById("selectedTime");
+var timeLimitInSeconds;
+var timerElement = document.getElementById('timer');
+var timerInterval;
+function everySecondTimerAction(){
+    timeLimitInSeconds--;
+    var minutes = Math.floor(timeLimitInSeconds / 60);
+    var seconds = timeLimitInSeconds % 60;
+  
+    if (timeLimitInSeconds < 0) {
+
+      timerElement.textContent = '00:00';
+      clearInterval(timerInterval);
+      return;
+    }
+  
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+
+    if (seconds < 10) {
+      seconds = '0' + seconds;
+    }
+
+    if (seconds == 0) {
+      alert("Game Over!");
+      location.reload(); 
+    }
+
+    timerElement.textContent = minutes + ':' + seconds;
+  
+}
+function startTimer() {
+    timeLimitInMinutes = parseInt(timeLimitInMinutes.value);
+    timeLimitInSeconds = timeLimitInMinutes * 5;
+    timerInterval = setInterval(everySecondTimerAction, 1000);
+}
+
