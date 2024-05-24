@@ -45,6 +45,10 @@ function validateRowsAndCols(numberOfRows,numberOfCols){
         alert("number of rows or number of columns must be even");
         throw new Error();
     }
+    if(numberOfCols > 20){
+        alert("maximum number of cols allowed is 20 \n you can increase rows as you want !! ");
+        throw new Error();
+    }
 }
 
 function createBoardImages(numberOfRows,numberOfCols){
