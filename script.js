@@ -18,6 +18,7 @@ function initializeImages() {
 }
 
 function startGame() {
+    
     gridImages = [];
     selectedImagesLength = 0;
     // get number of rows 
@@ -39,6 +40,7 @@ function startGame() {
     createBoardImages(numberOfRows,numberOfCols);
 
     startTimer();
+    startGameDiv.style.display = "none";
 }
 
 function validateRowsAndCols(numberOfRows,numberOfCols){
@@ -202,7 +204,9 @@ function everySecondTimerAction(){
     timerElement.textContent = minutes + ':' + seconds;
   
 }
+
 function startTimer() {
+    clearInterval(timerInterval);
     timeLimitInMinutes = parseInt(timeLimitInMinutes.value);
     timeLimitInSeconds = timeLimitInMinutes * 60;
     timerInterval = setInterval(everySecondTimerAction, 1000);
