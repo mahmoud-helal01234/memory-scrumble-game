@@ -2,6 +2,8 @@ var gameBoard = document.getElementById('gameBoard');
 var numRowsInput = document.getElementById('nrows');
 var numColsInput = document.getElementById('ncols');
 var startGameDiv = document.getElementById('startGame');
+var restartGameButton = document.getElementById('restartGame');
+
 var images = [];
 var gridImages = [];
 var numberOfRows;
@@ -41,6 +43,7 @@ function startGame() {
 
     startTimer();
     startGameDiv.style.display = "none";
+    restartGameButton.style.display = "block";
 }
 
 function validateRowsAndCols(numberOfRows,numberOfCols){
@@ -211,4 +214,3 @@ function startTimer() {
     timeLimitInSeconds = timeLimitInMinutes * 60;
     timerInterval = setInterval(everySecondTimerAction, 1000);
 }
-
