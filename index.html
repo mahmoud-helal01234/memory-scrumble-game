@@ -1,16 +1,27 @@
 <html>
 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" 
-          content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="style.css"> 
-    <title>Memory Card Game</title> 
-</head> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Memory Scrumble Game</title>
+    </head>
 
-<body>
-    
-    <script src="script.js"></script> 
+    <body>
+        <div id="startGame">
+            <label for="nrows">Number of Rows:</label>
+            <input type="number" id="nrows" min="1" value="2">
+            <label for="ncols">Number of Columns:</label>
+            <input type="number" id="ncols" min="1" value="2">
+            <button onclick="startGame()">Start Game</button>
+        </div>
 
-</body>
+        <table id="gameBoard" style="width: 100%; border: 2px solid black;">
+          
+        </table>
+        
+        <script src="script.js"></script>
+        
+    </body>
 </html>
